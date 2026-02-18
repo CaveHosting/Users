@@ -11,7 +11,7 @@ public class AuthConsumer {
     this.authService = authService;
   }
 
-  @RabbitListener(queues = "users.queues")
+  @RabbitListener(queues = "users.queue")
   public void onUserReceived(String username) {
     authService.register(username);
   }
